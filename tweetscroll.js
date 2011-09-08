@@ -28,6 +28,8 @@
 				'focus': function() { hasFocus = true; }
 			});
 			
+			$('#new-tweets-bar').click();
+			
 			$(document).bind('DOMNodeInserted', function(event) {
 				if (event.target.id === 'new-tweets-bar') {
 					if (hasFocus) { show(event); }
