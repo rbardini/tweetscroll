@@ -22,21 +22,23 @@
 			isEnqueued = false;
 		}
 		
-		$('head').append('<style>#new-tweets-bar {display:none !important}</style>');
-		
-		$(window).bind({
-			'blur': function() { hasFocus = false; },
-			'focus': function() { hasFocus = true; }
-		});
-		
-		$(document).bind('DOMNodeInserted', function(event) {
-			if (event.target.id === 'new-tweets-bar') {
-				if (hasFocus) { show(event); }
-				else if (!isEnqueued) {
-					$(window).one('focus', function() { show(event); });
-					isEnqueued = true;
+		try {
+			$(window).bind({
+				'blur': function() { hasFocus = false; },
+				'focus': function() { hasFocus = true; }
+			});
+			
+			$(document).bind('DOMNodeInserted', function(event) {
+				if (event.target.id === 'new-tweets-bar') {
+					if (hasFocus) { show(event); }
+					else if (!isEnqueued) {
+						$(window).one('focus', function() { show(event); });
+						isEnqueued = true;
+					}
 				}
-			}
-		});
+			});
+			
+			$('head').append('<style>#new-tweets-bar {display:none !important}</style>');
+		} catch(e) {}
 	}
 })();
