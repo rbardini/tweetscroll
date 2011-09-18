@@ -1,7 +1,7 @@
 /*
  * Tweetscroll v1.0
  * Copyright (c) 2011 Rafael Bardini
- * http://github.com/rbardini/tweetscroll
+ * https://github.com/rbardini/tweetscroll
  * 
  * Licensed under the MIT license
  * http://www.opensource.org/licenses/mit-license.php
