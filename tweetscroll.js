@@ -23,14 +23,14 @@
 		}
 		
 		try {
-			$(window).bind({
+			$(window).on({
 				'blur': function() { hasFocus = false; },
 				'focus': function() { hasFocus = true; }
 			});
 			
 			$('#new-tweets-bar').click();
 			
-			$(document).bind('DOMNodeInserted', function(event) {
+			$(document).on('DOMNodeInserted', function(event) {
 				if (event.target.id === 'new-tweets-bar') {
 					if (hasFocus) { show(event); }
 					else if (!isEnqueued) {
