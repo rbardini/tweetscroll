@@ -1,5 +1,5 @@
 /*
- * Tweetscroll v1.0
+ * Tweetscroll v1.1
  * Copyright (c) 2011 Rafael Bardini
  * https://github.com/rbardini/tweetscroll
  * 
@@ -17,8 +17,8 @@
 			hasFocus = true,
 			isEnqueued = false;
 		
-		function show(event) {
-			$(event.target).click();
+		function show(el) {
+			el.click();
 			isEnqueued = false;
 		}
 		
@@ -28,19 +28,23 @@
 				'focus': function() { hasFocus = true; }
 			});
 			
-			$('#new-tweets-bar').click();
+			$('.new-tweets-bar').click();
 			
 			$(document).on('DOMNodeInserted', function(event) {
-				if (event.target.id === 'new-tweets-bar') {
-					if (hasFocus) { show(event); }
-					else if (!isEnqueued) {
-						$(window).one('focus', function() { show(event); });
-						isEnqueued = true;
+				var el = $(event.target);
+				if (el.hasClass('stream-item')) {
+					bar = el.children('.new-tweets-bar');
+					if (bar.length) {
+						if (hasFocus) { show(bar); }
+						else if (!isEnqueued) {
+							$(window).one('focus', function() { show(bar); });
+							isEnqueued = true;
+						}
 					}
 				}
 			});
 			
-			$('head').append('<style>#new-tweets-bar {display:none !important}</style>');
+			$('head').append('<style>.new-tweets-bar {display:none !important}</style>');
 		} catch(e) {}
 	}
 })();
