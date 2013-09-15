@@ -15,4 +15,5 @@ h2. Implementations
 You can try Tweetscroll using "this bookmarklet":http://labs.rbardini.com/tweetscroll/. The following implementations are also available:
 
 * !http://userscripts.org/images/script_icon.png! "User script":http://userscripts.org/scripts/show/109876
-* !http://www.opera.com/favicon.ico! "Opera extension":https://addons.opera.com/addons/extensions/details/tweetscroll/
+* !http://www.google.com/images/icons/product/chrome-16.png! "Chrome extension":https://chrome.google.com/webstore/detail/tweetscroll/geknonkbphmohoiijaolhggfacaofcnm
+* !http://www.opera.com/favicon.ico! "Opera 12 extension":https://addons.opera.com/addons/extensions/details/tweetscroll/
