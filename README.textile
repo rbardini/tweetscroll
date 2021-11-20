@@ -2,6 +2,8 @@ h1. "Tweetscroll":https://rbardini.github.io/tweetscroll/
 
 Tweetscroll is a small piece of JavaScript code that, when executed on Twitter web interface, makes its timeline behave similarly to Facebook's News Feed, automatically showing new tweets when the page has focus.
 
+!screenshot.png!
+
 h2. Dependencies
 
 The script relies on the "jQuery library":https://jquery.com/ in order to run, which is already included by Twitter on its site as of now.
